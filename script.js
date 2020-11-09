@@ -1,11 +1,14 @@
-let array = [3, 0, -5, 1, 44, -12, 3, 0, 0, 1, 2, -3, -3, 2, 1, 4, -2, -3, -1];
+let array = [1, undefined, 3, 5, -3];
 
 function sum(array) {
     let sum = 0;
     for (let i = 0; i < array.length; i++) {
+        if (array[i] === undefined || NaN) {
+            continue;
+        }
         sum += array[i];
     }
-    console.log(sum);
+    console.log("sum:", sum);
 }
 
 function min(array) {
@@ -16,7 +19,7 @@ function min(array) {
         }
 
     }
-    console.log(min);
+    console.log("min:", min);
 }
 
 function max(array) {
@@ -27,7 +30,15 @@ function max(array) {
         }
 
     }
-    console.log(max);
+    console.log("max:", max);
+}
+
+function waterCount(rockHeight) {
+    let maxHeight = rockHeight[0];
+    for (let i = 0; i < rockHeight.length; i++) {
+
+
+    }
 }
 sum(array);
 min(array);
