@@ -1,45 +1,78 @@
-let array = [1, undefined, 3, 5, -3];
+let task1Array = [
+    [3, 0, -5, 1, 44, -12, 3, 0, 0, 1, 2, -3, -3, 2, 1, 4, -2, -3, -1],
+    [-1, -8, -2],
+    [1, 7, 3],
+    [1, undefined, 3, 5, -3],
+    [1, NaN, 3, 5, -3]
+]
+let task2Array = [2, 5, 1, 3, 1, 2, 1, 7, 7, 6];
 
 function sum(array) {
-    let sum = 0;
+
     for (let i = 0; i < array.length; i++) {
-        if (array[i] === undefined || NaN) {
-            continue;
+        let sum = 0;
+        for (let j = 0; j < array[i].length; j++) {
+            if (array[i][j] === undefined || NaN) {
+                continue;
+            }
+            sum += array[i][j];
         }
-        sum += array[i];
+        console.log("sum of ", i, " array:", sum);
     }
-    console.log("sum:", sum);
 }
 
 function min(array) {
-    let min = array[0];
     for (let i = 0; i < array.length; i++) {
-        if (array[i] < min) {
-            min = array[i];
+        let min = array[i][0];
+        for (let j = 0; j < array[i].length; j++) {
+            if (array[i][j] < min) {
+                min = array[i][j];
+            }
         }
-
+        console.log("min of ", i, " array:", min);
     }
-    console.log("min:", min);
 }
 
 function max(array) {
-    let max = array[0];
     for (let i = 0; i < array.length; i++) {
-        if (array[i] > max) {
-            max = array[i];
+        let max = array[i][0];
+        for (let j = 0; j < array[i].length; j++) {
+            if (array[i][j] > max) {
+                max = array[i][j];
+            }
         }
-
+        console.log("max of ", i, " array:", max);
     }
-    console.log("max:", max);
 }
 
 function waterCount(rockHeight) {
-    let maxHeight = rockHeight[0];
-    for (let i = 0; i < rockHeight.length; i++) {
+    let lMax = 0;
+    let rMax = 0;
+    let left = 0;
+    let right = rockHeight.length - 1;
+    let sum = 0;
+    while (left < right) {
+        if (rockHeight[right] > rMax) {
+            rMax = rockHeight[right];
+        }
+        if (rockHeight[left] > lMax) {
+            lMax = rockHeight[left];
+        }
 
-
+        if (lMax >= rMax) {
+            sum += rMax - rockHeight[right];
+            right--;
+        } else {
+            sum += lMax - rockHeight[left];
+            left++;
+        }
     }
+    console.log(sum);
+
+
 }
-sum(array);
-min(array);
-max(array);
+sum(task1Array);
+min(task1Array);
+max(task1Array);
+waterCount(task2Array);
+console.log(task1Array.length)
