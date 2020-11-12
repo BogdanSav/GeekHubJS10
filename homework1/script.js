@@ -12,10 +12,12 @@ function sum(array) {
     for (let i = 0; i < array.length; i++) {
         let sum = 0;
         for (let j = 0; j < array[i].length; j++) {
-            if (array[i][j] === undefined || NaN) {
+            if (array[i][j]) {
+                sum += array[i][j];
+            } else if (isNaN(array[i][j])) {
                 continue;
             }
-            sum += array[i][j];
+
         }
         console.log("sum of ", i, " array:", sum);
     }
@@ -67,7 +69,7 @@ function waterCount(rockHeight) {
             left++;
         }
     }
-    console.log(sum);
+    console.log("count of water between rocks:", sum);
 
 
 }
@@ -75,4 +77,3 @@ sum(task1Array);
 min(task1Array);
 max(task1Array);
 waterCount(task2Array);
-console.log(task1Array.length)
