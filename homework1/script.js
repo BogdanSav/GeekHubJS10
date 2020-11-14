@@ -48,25 +48,29 @@ function max(array) {
 }
 
 function waterCount(rockHeight) {
-    let lMax = 0;
-    let rMax = 0;
-    let left = 0;
-    let right = rockHeight.length - 1;
+    let rocks = {
+        lMax: 0,
+        rMax: 0,
+        left: 0,
+        right: rockHeight.length - 1,
+    }
+
+
     let sum = 0;
-    while (left < right) {
-        if (rockHeight[right] > rMax) {
-            rMax = rockHeight[right];
+    while (rocks.left < rocks.right) {
+        if (rockHeight[rocks.right] > rocks.rMax) {
+            rocks.rMax = rockHeight[rocks.right];
         }
-        if (rockHeight[left] > lMax) {
-            lMax = rockHeight[left];
+        if (rockHeight[rocks.left] > rocks.lMax) {
+            rocks.lMax = rockHeight[rocks.left];
         }
 
-        if (lMax >= rMax) {
-            sum += rMax - rockHeight[right];
-            right--;
+        if (rocks.lMax >= rocks.rMax) {
+            sum += rocks.rMax - rockHeight[rocks.right];
+            rocks.right--;
         } else {
-            sum += lMax - rockHeight[left];
-            left++;
+            sum += rocks.lMax - rockHeight[rocks.left];
+            rocks.left++;
         }
     }
     console.log("count of water between rocks:", sum);

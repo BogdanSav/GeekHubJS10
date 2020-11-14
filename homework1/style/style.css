@@ -1,35 +1,35 @@
 .container {
-    width: 1700px;
-    height: 1200px;
+    width: 1024px;
     margin: 0 auto;
-    padding: 1vh;
+    padding: 10px;
     border: 1px solid #000;
 }
 
 .header {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    width: inherit;
+    /* justify-content: space-around; */
     border: 1px solid #000;
 }
 
 .square {
-    width: 225px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     background-color: gray;
 }
 
 .rectangle {
     margin-left: 20px;
-    width: 570px;
-    height: 150px;
+    width: 250px;
+    height: 100px;
     background-color: gray;
 }
 
 .contacts {
     margin-left: 20px;
     width: 750px;
-    height: 150px;
+    height: 100px;
     background-color: gray;
 }
 
@@ -47,8 +47,8 @@
 
 .main-container {
     margin-top: 40px;
+    width: inherit;
     height: 710px;
-    padding: 10px;
     border: 1px solid #000;
     display: flex;
     flex-direction: row;
@@ -56,72 +56,19 @@
 }
 
 .side-bar {
-    width: 400px;
+    width: 20px;
     height: 700px;
     border: 1px solid #000;
 }
 
 .content {
-    width: 1250px;
-    height: 700px;
+    width: inherit;
     border: 1px solid #000;
     display: flex;
     flex-direction: column;
     padding:
 }
 
-.top-content {
-    margin: 10px;
-    border: 1px solid #000;
-}
+.bottom-content {}
 
-.top-content>p:nth-child(1) {
-    margin-left: 1.5vh;
-}
-
-.middle-content {
-    margin: 10px;
-    border: 1px solid #000;
-    display: flex;
-    flex-direction: column;
-}
-
-.first-row {
-    margin: 10px 0 0 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.second-row {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: row;
-}
-
-.middle-divs {
-    margin-left: 0.8vh;
-    width: 200px;
-    height: 100px;
-    border: 1px solid #000;
-}
-
-.second-row>.middle-divs:nth-child(1) {
-    margin-left: 30px;
-}
-
-.second-row>.middle-divs:nth-child(2) {
-    margin-left: 40px;
-}
-
-.bottom-content {
-    margin: 10px;
-    height: 300px;
-    border: 1px solid #000;
-}
-
-.footer {
-    margin-top: 40px;
-    border: 1px solid #000;
-}
+.footer {}
