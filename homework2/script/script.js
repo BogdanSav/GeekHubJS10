@@ -1,14 +1,16 @@
 //#region Cycle_For
-function cycleFor(start, condidtion, step) {
+function cycleFor(start, condidtion, step, callback) {
 
     if (start < condidtion) {
         start += step;
-        console.log("iteration");
-        cycleFor(start, condidtion, step);
+        callback.call(null, start, condidtion, step);
+        cycleFor(start, condidtion, step, callback);
     } else console.log(start);
 }
 
-cycleFor(2, 10, 1);
+cycleFor(2, 10, 1, function() {
+    console.log(1);
+});
 //#endregion
 //#region sum(1)(2)(3)
 function curry(func) {
@@ -34,6 +36,56 @@ console.log(sum(1)(2)(3));
 
 //#endregion
 //region array methods
+Array.prototype.myForEach = function(callback) {
+    for (let i = 0; i < this.length; i++) {
+        callback.call(null, this[i], i, this);
+    }
+};
+Array.prototype.myMap = function(callback) {
+    let result = [];
+    for (let i = 0; i < this.length; i++) {
+        result[i] = callback.call(null, this[i], i, this);
+    }
+    return result;
+}
+Array.prototype.myFilter = function(callback) {
+    let result = [];
+    for (let i = 0; i < this.length; i++) {
+        if (callback.call(null, this[i], i, this)) {
+            result[i] = this[i];
+        } else result[i] = null;
 
+    }
+    return result;
+}
+Array.prototype.myFind = function(callback) {
+    let result;
+    for (let i = 0; i < this.length; i++) {
+        if (callback.call(null, this[i], i, this)) {
+            result = this[i];
+            break;
+        }
 
+    }
+    return result;
+};
+//#endregion
+//#region test
+let arr = [2, 2, 3, 1, 5, 6, 1, 12, 1, 56, 34, 45];
+arr.myForEach((item, i, array) => {
+    console.log(item, i, array);
+})
+
+let mapArr = arr.myMap((item) => {
+    return item * 2;
+});
+console.log(mapArr);
+let filterArr = arr.myFilter((item) => {
+    return item < 3;
+})
+console.log(filterArr);
+let findArr = arr.myFind((item) => {
+    return item < 3;
+})
+console.log(findArr);
 //#endregion
