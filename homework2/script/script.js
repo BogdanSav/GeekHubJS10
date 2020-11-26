@@ -32,10 +32,25 @@ let sum = curry(sumFunc);
 console.log(sum(1)(2)(3));
 //#endregion
 //#region calculate
-
-
+let Calc = function(inputValue) {
+    this.value = inputValue;
+};
+Calc.prototype.add = function(number) {
+    this.value += number;
+    return this;
+};
+Calc.prototype.multiply = function(number) {
+    this.value *= number;
+    return this;
+}
+Calc.prototype.result = function() {
+    return this.value;
+}
+let calculate = new Calc(3);
+let result = calculate.add(2).multiply(2).result();
+console.log("calculate:", result);
 //#endregion
-//region array methods
+//#region array methods
 Array.prototype.myForEach = function(callback) {
     for (let i = 0; i < this.length; i++) {
         callback.call(null, this[i], i, this);
@@ -53,8 +68,7 @@ Array.prototype.myFilter = function(callback) {
     for (let i = 0; i < this.length; i++) {
         if (callback.call(null, this[i], i, this)) {
             result[i] = this[i];
-        } else result[i] = null;
-
+        }
     }
     return result;
 }
@@ -65,7 +79,6 @@ Array.prototype.myFind = function(callback) {
             result = this[i];
             break;
         }
-
     }
     return result;
 };
