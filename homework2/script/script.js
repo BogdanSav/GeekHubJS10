@@ -65,11 +65,14 @@ Array.prototype.myMap = function(callback) {
 }
 Array.prototype.myFilter = function(callback) {
     let result = [];
+    let counter = 0;
     for (let i = 0; i < this.length; i++) {
         if (callback.call(null, this[i], i, this)) {
-            result[i] = this[i];
+            result[counter] = this[i];
+            counter++;
         }
     }
+    counter = 0;
     return result;
 }
 Array.prototype.myFind = function(callback) {
