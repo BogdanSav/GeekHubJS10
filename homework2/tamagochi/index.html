@@ -4,23 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
     <title>Tamagochi</title>
 </head>
 
 <body>
     <div class="container">
+        <button id="start">Start/Reset</button>
+        <div class="stat">
+            <table>
+                <tr>
+                    <td>
+                        health:
+                        <input type="text" id="health">
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        happines:
+                        <input type="text" id="happines">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        hunger:
+                        <input type="text" id="hunger">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        sleep:
+                        <input type="text" id="sleep">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        money:
+                        <input type="text" id="money">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        clean
+                        <input type="text" id="clean">
+                    </td>
+                </tr>
+            </table>
+        </div>
         <div class="buttons">
-            <button> Feed</button>
-            <button>Play</button>
-            <button>Clean</button>
+            <div class="chekbox">
+                <div class="foodTypes">
+                    <input type="radio" name='food' value="apple">Apple</input>
+                    <input type="radio" name='food' value="cookie">Cookie</input>
+                    <input type="radio" name='food' value="cake">Cake</input>
+                    <input type="radio" name='food' value="burger">Burger</input>
+                    <button id='feed'> Feed</button>
+                </div>
+                <div class="gameTypes">
+                    <input type="radio" name='game' value="ball">ball</input>
+                    <input type="radio" name='game' value="kite">kite</input>
+                    <input type="radio" name='game' value="plane">plane</input>
+                    <button id="play">Play</button>
+                </div>
+            </div>
+            <button id="cleaning">Clean</button>
+            <button id="sleeping">Sleep</button>
         </div>
-        <div class="status">
-
-        </div>
-
-
     </div>
-    <script type="module" src="scripts/script.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 
 </html>
