@@ -4,6 +4,7 @@
     margin: 0 auto;
     border: 1px solid #000;
     background-image: url("/GeekHubJS10/homework4/tagging/img/image.jpg");
+    overflow: hidden;
 }
 
 .lorem {
@@ -16,7 +17,7 @@
     border-radius: 5px 5px;
 }
 
-.lorem p {
+.lorem__title {
     color: #fff;
     margin: 0;
     position: absolute;
@@ -26,7 +27,23 @@
     transform: translate(-50%, -50%);
 }
 
-.buttonX {
-    width: 10px;
-    height: 10px;
+.lorem__button {
+    width: 15px;
+    height: 25px;
+    color: #fff;
+    border: 1px solid #000;
+    background: rgb(63, 59, 59);
+    opacity: 70%;
+    position: absolute;
+    top: 0%;
+    left: 100%;
+    border-radius: 5px 5px;
+}
+
+.lorem__button_hidden {
+    visibility: hidden;
+}
+
+.lorem_hidden {
+    visibility: hidden;
 }
