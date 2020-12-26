@@ -7,7 +7,7 @@ for (let item of items) {
         if (e.type != "contexmenu") {
             item.children[1].classList.remove("lorem__button_hidden");
             item.classList.add("grab");
-            item.children[1].addEventListener("click", () => {
+            item.children[1].addEventListener("contextmenu", () => {
                 item.classList.add("lorem_hidden");
             });
 
@@ -18,9 +18,6 @@ for (let item of items) {
 
             })
         }
-
-
-
 
     });
     item.addEventListener("contextmenu", (e) => {
