@@ -17,7 +17,6 @@ export default class ToDoItem extends React.Component {
 
     }
     render() {
-
         return (
             <Grid container spacing={1} justify="space-around" style={{ marginTop: "10px", border: "1px solid black", borderRadius: "10px 10px", padding: "2px" }}>
                 <Grid item >  <Checkbox style={{ color: "green" }} onClick={this.isChecked} ref={this.checkRef} /></Grid>

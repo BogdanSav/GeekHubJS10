@@ -16,7 +16,7 @@ class App extends Component {
   newItem=()=> {
     console.log(this.InputRef.current.children[0].value);
     let toDoItem =[...this.state.toDoItem];
-    toDoItem.push("");
+    toDoItem.push(this.InputRef.current.children[0].value);
     this.setState({toDoItem}); 
     setTimeout(()=>{ this.InputRef.current.children[0].value = ""},10);
     clearTimeout();
@@ -24,9 +24,9 @@ class App extends Component {
   }
   deleteItem=(e)=>{
     let toDoItem =[...this.state.toDoItem];
-    toDoItem.splice(e.target.getAttribute('index'),1);
+    toDoItem.splice(e.target.parentElement.getAttribute('index')|| e.target.getAttribute('index'),1);
     this.setState({toDoItem}); 
-    console.log();
+    console.log(toDoItem);
   }
   render() {
     return (
@@ -41,7 +41,7 @@ class App extends Component {
           </Grid>
         </Grid>
         {this.items = this.state.toDoItem.map((item, index)=>(
-           <ToDoItem text={this.InputRef.current.children[0].value} delete={this.deleteItem} index={index} />
+           <ToDoItem text={item} delete={this.deleteItem} index={index} />
            
         ))}
       </Container>

@@ -4,7 +4,7 @@ input.addEventListener("keyup", (e) => {
     if (timeout) {
         clearTimeout(timeout);
     }
-    timeout = setTimeout(() => { console.log("done") }, 3000);
+    timeout = setTimeout(() => { console.log("done") }, 300);
 
 });
 
