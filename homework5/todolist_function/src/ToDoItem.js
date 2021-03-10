@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import { Grid, Checkbox, TextField, } from '@material-ui/core';
-import DeleteIcon from '@material-ui/icons/Delete';
 
 export default function ToDoItems(props) {
     let textRef = React.createRef();
