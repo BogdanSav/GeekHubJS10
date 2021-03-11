@@ -11,18 +11,17 @@ function Selector() {
 
     return (
         <React.Fragment>
-            <Grid item> current timezone:{timezone}</Grid>
             <Grid item>
                 <FormControl className="formControl">
                     <InputLabel id="label">timezone</InputLabel>
                     <Select
                         labelId="label"
                         id="demo-mutiple-name"
-                        style={{ width: "150px" }}
+                        style={{ width: "230px" }}
                         value={timezone}
                         onChange={(e) => {
                             setTimezone(e.target.value)
-                            dispatch({type: CHANGE_TIMEZONE, payload: timezone })
+                            dispatch({type: CHANGE_TIMEZONE, payload: e.target.value })
                         }}
                     >
                         {zones.map((name) => (

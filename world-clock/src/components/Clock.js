@@ -5,7 +5,7 @@ import{ useSelector} from "react-redux"
 import moment from "moment-timezone"
 
 function Clock(){
-    const timezone = useSelector(state=>state);
+    let timezone = useSelector(state=>state);
     let [time,setTime] = useState(moment.tz(timezone).format('HH:mm:ss'));
    
     const timer = setInterval(()=>setTime(moment.tz(timezone).format('HH:mm:ss')),1000);
