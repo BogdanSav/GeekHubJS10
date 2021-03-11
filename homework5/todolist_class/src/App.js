@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ToDoItem from './toDoItem';
+import ToDoItem from "./components/ToDoItem"
 import { Container, Grid, Input,  Button } from '@material-ui/core';
 
 
@@ -12,21 +12,22 @@ class App extends Component {
     }
     this.items=undefined;
     
+    
   }
   newItem=()=> {
-    console.log(this.InputRef.current.children[0].value);
+    
     let toDoItem =[...this.state.toDoItem];
     toDoItem.push("");
     this.setState({toDoItem}); 
-    setTimeout(()=>{ this.InputRef.current.children[0].value = ""},10);
+    setTimeout(()=>this.InputRef.current.children[0].value = "",1000);
     clearTimeout();
    
   }
   deleteItem=(e)=>{
+    
     let toDoItem =[...this.state.toDoItem];
     toDoItem.splice(e.target.getAttribute('index'),1);
     this.setState({toDoItem}); 
-    console.log();
   }
   render() {
     return (
@@ -41,7 +42,7 @@ class App extends Component {
           </Grid>
         </Grid>
         {this.items = this.state.toDoItem.map((item, index)=>(
-           <ToDoItem text={this.InputRef.current.children[0].value} delete={this.deleteItem} index={index} />
+           <ToDoItem key={index} text={this.InputRef.current.children[0].value} delete={this.deleteItem} index={index} />
            
         ))}
       </Container>
