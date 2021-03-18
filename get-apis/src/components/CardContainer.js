@@ -1,12 +1,13 @@
 import React from 'react';
-
+import {useSelector} from "react-redux";
 
 import { Grid } from "@material-ui/core"
 import Card from "./Card"
 
-function CardContainer({data}) {
-
-    
+function CardContainer() {
+   
+   
+    const data = useSelector(state=>state.apis);
 
     return (
         <Grid item>
