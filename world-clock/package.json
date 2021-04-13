@@ -12,7 +12,14 @@
     "react-scripts": "0.9.5",
     "redux": "^4.0.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.2.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
