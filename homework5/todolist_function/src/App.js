@@ -1,10 +1,10 @@
-// eslint-disable-next-line jsx-a11y/control-has-associated-label
-import React from 'react';
+
+ import React from 'react';
 
 import { Container } from '@material-ui/core';
 
-import Header from './components/Header';
-import ToDoList from './components/ToDolist';
+import Header from './components/HeaderComponent/Header';
+import ToDoList from './components/ToDoListComponent/ToDolist';
 
 function App() {
   return (

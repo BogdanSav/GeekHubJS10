@@ -1,31 +1,39 @@
 {
-    "name": "todolist_function",
-    "version": "0.1.0",
-    "private": true,
-    "dependencies": {
-        "@material-ui/core": "^4.11.2",
-        "@material-ui/icons": "^4.11.2",
-        "@reduxjs/toolkit": "^1.5.0",
-        "prop-types": "^15.7.2",
-        "react": "^17.0.1",
-        "react-dom": "^17.0.1",
-        "react-redux": "^7.2.2",
-        "react-scripts": "0.9.5",
-        "redux": "^4.0.5"
-    },
-    "devDependencies": {
-        "eslint": "^5.16.0",
-        "eslint-config-airbnb": "^18.2.1",
-        "eslint-plugin-import": "^2.22.1",
-        "eslint-plugin-jsx-a11y": "^5.1.0",
-        "eslint-plugin-react": "^7.23.2",
-        "eslint-plugin-react-hooks": "^4.2.0"
-    },
-    "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test --env=jsdom",
-        "eject": "react-scripts eject",
-        "lint": "npx eslint src/*.js src/components/*.js"
-    }
+  "name": "todolist_function",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.11.2",
+    "@material-ui/icons": "^4.11.2",
+    "@reduxjs/toolkit": "^1.5.0",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "react-scripts": "^4.0.3",
+    "redux": "^4.0.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "lint": "npx eslint src/*.js src/components/*.js"
+  },
+  "devDependencies": {
+    "eslint": "^7.25.0",
+    "eslint-plugin-react": "^7.23.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

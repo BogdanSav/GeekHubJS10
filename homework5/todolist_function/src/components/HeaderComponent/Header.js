@@ -1,8 +1,7 @@
-// eslint-disable-next-line jsx-a11y/control-has-associated-label
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Button, Grid, Input } from '@material-ui/core';
-import mapDispatchToProps from '../redux/mapDispatchToProps';
+import mapDispatchToProps from '../../redux/mapDispatchToProps';
 
 // eslint-disable-next-line react/prop-types
 function Header({ addNew }) {

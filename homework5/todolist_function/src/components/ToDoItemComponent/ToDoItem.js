@@ -1,11 +1,11 @@
-// eslint-disable-next-line jsx-a11y/control-has-associated-label
 import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import {Grid, Checkbox, TextField} from '@material-ui/core';
 import { connect } from 'react-redux';
-import mapDispatchToProps from '../redux/mapDispatchToProps';
+import mapDispatchToProps from '../../redux/mapDispatchToProps';
 
 function ToDoItem({
+                    // eslint-disable-next-line react/prop-types
   delItems, complete, index, text,
 }) {
   const [status, setStatus] = useState(false);
