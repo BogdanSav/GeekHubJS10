@@ -3,7 +3,7 @@ import React from 'react';
 import { Grid } from '@material-ui/core';
 
 import ChangeFormat from './ChangeFormat';
-import useClock from './useClock';
+import useClock from '../../hooks/useClock';
 
 function Clock() {
   const time = useClock();

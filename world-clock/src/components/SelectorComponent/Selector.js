@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import {
   Grid, FormControl, InputLabel, Select, MenuItem,
 } from '@material-ui/core';
 
-import { useDispatch } from 'react-redux';
-import zones from './timezones.json';
-import { CHANGE_TIMEZONE } from '../redux/actions';
+import { connect } from 'react-redux';
+import zones from '../timezones.json';
+import mapDispatchToProps from '../../redux/mapDispatchToProps';
 
-function Selector() {
-  const dispatch = useDispatch();
+// eslint-disable-next-line react/prop-types
+function Selector({ timezoneCh }) {
   const [timezone, setTimezone] = useState('Europe/Kiev');
-
+  const changeZone = useCallback((e) => {
+    setTimezone(e.target.value);
+    timezoneCh(e.target.value);
+  }, [timezone]);
   return (
 
     <Grid item>
@@ -18,13 +21,10 @@ function Selector() {
         <InputLabel id="label">timezone</InputLabel>
         <Select
           labelId="label"
-          id="demo-mutiple-name"
+          id="demo-multiple-name"
           style={{ width: '230px' }}
           value={timezone}
-          onChange={(e) => {
-            setTimezone(e.target.value);
-            dispatch({ type: CHANGE_TIMEZONE, payload: e.target.value });
-          }}
+          onChange={changeZone}
         >
           {zones.map((name) => (
             <MenuItem key={name} value={name}>
@@ -38,4 +38,4 @@ function Selector() {
 
   );
 }
-export default Selector;
+export default connect(null, mapDispatchToProps('Selector'))(Selector);

@@ -1,4 +1,4 @@
-import { CHANGE_FORMAT, CHANGE_TIMEZONE } from './actions';
+import { CHANGE_FORMAT, CHANGE_TIMEZONE } from '../actions/actions';
 
 const initialState = {
   timezone: 'Europe/Kiev',

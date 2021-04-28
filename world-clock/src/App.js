@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container, Grid } from '@material-ui/core';
-import Header from './components/Header';
-import Clock from './components/Clock';
-import Selector from './components/Selector';
+import Header from './components/HeaderComponent/Header';
+import Clock from './components/ClockComponent/Clock';
+import Selector from './components/SelectorComponent/Selector';
 import './App.css';
 
 function App() {
