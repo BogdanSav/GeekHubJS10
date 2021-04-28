@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import { Button, Grid, Input } from '@material-ui/core';
 import mapDispatchToProps from '../../redux/mapDispatchToProps';
 
-// eslint-disable-next-line react/prop-types
-function Header({ addNew }) {
+
+const Header:React.FC =({ addNew })=> {
   const [text, setText] = useState('');
 
   return (
-    <React.Fragment>
+    <>
       <h1>ToDo</h1>
       <Grid container justify="center" spacing={3}>
         <Grid item>
@@ -26,7 +26,7 @@ function Header({ addNew }) {
           </Button>
         </Grid>
       </Grid>
-    </React.Fragment>
+    </>
   );
 }
 
