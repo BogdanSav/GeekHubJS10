@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React from 'react';
 import {
   Grid, FormControl, InputLabel, Select, MenuItem,
 } from '@material-ui/core';
@@ -6,14 +6,10 @@ import {
 import { connect } from 'react-redux';
 import zones from '../timezones.json';
 import mapDispatchToProps from '../../redux/mapDispatchToProps';
-
+import useSelectFunc from './useSelectFunc';
 // eslint-disable-next-line react/prop-types
 function Selector({ timezoneCh }) {
-  const [timezone, setTimezone] = useState('Europe/Kiev');
-  const changeZone = useCallback((e) => {
-    setTimezone(e.target.value);
-    timezoneCh(e.target.value);
-  }, [timezone]);
+  const [timezone, changeZone] = useSelectFunc('Europe/Kiev', timezoneCh);
   return (
 
     <Grid item>
