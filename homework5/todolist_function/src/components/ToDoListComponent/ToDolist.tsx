@@ -1,20 +1,20 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import mapStateToProps from '../../redux/mapStateToProps';
-import {v4} from "uuid/wrapper.mjs";
+import {v4} from "uuid";
 import ToDoItem from '../ToDoItemComponent/ToDoItem';
+import {AnyAction} from "redux";
 
-// eslint-disable-next-line react/prop-types
-function ToDoList({items}) {
+
+const ToDoList = ({items}:AnyAction)=> {
   return (
-      <>
+      <React.Fragment>
         {
-          // eslint-disable-next-line react/prop-types
-          items.map((item, index) => (
+          items.map((item:{text:string}, index:number) => (
               <ToDoItem key={v4()} text={item.text} index={index}/>
           ))
         }
-      </>
+      </React.Fragment>
   );
 }
 

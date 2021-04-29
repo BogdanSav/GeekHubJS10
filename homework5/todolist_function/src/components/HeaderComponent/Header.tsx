@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Button, Grid, Input } from '@material-ui/core';
 import mapDispatchToProps from '../../redux/mapDispatchToProps';
+import {AnyAction} from "redux";
 
 
-const Header:React.FC =({ addNew })=> {
+// @ts-ignore
+const Header =({ addNew }:AnyAction)=> {
   const [text, setText] = useState('');
 
   return (
-    <>
+    <React.Fragment>
       <h1>ToDo</h1>
       <Grid container justify="center" spacing={3}>
         <Grid item>
@@ -26,8 +28,9 @@ const Header:React.FC =({ addNew })=> {
           </Button>
         </Grid>
       </Grid>
-    </>
+    </React.Fragment>
   );
 }
 
+// @ts-ignore
 export default connect(null, mapDispatchToProps('Header'))(Header);
